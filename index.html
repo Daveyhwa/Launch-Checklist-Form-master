@@ -3,23 +3,13 @@
     <head>
         <title>Launch Checklist</title>
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
-        <script src = "script.js"></script>
     </head>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget">
-            <!-- Fetch some planetary data -->
-            <script>
-                 window.addEventListener("load", function() {
-                    fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-                    // Access the JSON in the response
-                    response.json().then( function(json) {
-                const planets = json
-                console.log(planets)
-              });
-          });
-      });
-             </script>
+            <select id= "planetSelector">
+                <option value="unselected">Select a Planet</option>
+            </select>
         </div> 
         <div id="launchForm">
             <form>
@@ -50,4 +40,5 @@
             </div>
         </div>    
     </body>
+    <script src = "script.js"></script>
 </html>
