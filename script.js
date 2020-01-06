@@ -53,21 +53,17 @@ window.addEventListener('load', function() {
 		}
 		if (fuelLevel.value < 10000 || isNaN(fuelLevel.value)) {
 			errorTrip++;
-			console.log('fuel');
-			console.log(fuelLevel.innerHTML);
-			console.log(cargoMass);
-			console.log(fuelLevel);
-
 			document.getElementById('fuelStatus').innerHTML = 'Fuel level Low';
 		}
 		if (cargoMass.value > 10000 || isNaN(cargoMass.value)) {
 			errorTrip++;
-			console.log('cargo');
 			document.getElementById('cargoStatus').innerHTML = 'Too heavy';
 		}
 		if (errorTrip > 0) {
 			event.preventDefault();
 			document.getElementById('faultyItems').style.visibility = 'visible';
+		} else {
+			alert('success');
 		}
 	});
 });
