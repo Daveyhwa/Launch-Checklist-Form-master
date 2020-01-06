@@ -15,16 +15,16 @@
                     <option value='unselected'>Select a Planet</option>
                 </select> -->
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Pilot Name <input type="text" value='' name="pilotName" id="pilotName" ></label>
+                    <label>Pilot Name <input type="text" value='' name="pilotName" id="pilotName" required ></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Co-pilot Name <input type="text" value='' name="copilotName" id="copilotName"  /></label>
+                    <label>Co-pilot Name <input type="text" value='' name="copilotName" id="copilotName" required /></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Fuel Level (L) <input type="number" value=0 name="fuelLevel" id='fuelLevel'  /></label> 
+                    <label>Fuel Level (L) <input type="number" value=0 name="fuelLevel" id='fuelLevel' required /></label> 
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Cargo Mass (kg) <input type="number" value= 0 name="cargoMass" id='cargoMass' /></label>
+                    <label>Cargo Mass (kg) <input type="number" value= 0 name="cargoMass" id='cargoMass' required/></label>
                 </div>
                 <button id="formSubmit">Submit</button>
             </form>

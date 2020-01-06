@@ -1,10 +1,11 @@
 // Write your JavaScript code here!
 let planets = null;
-let pilotName = document.querySelector('input[name=pilotName]').value;
-let copilotName = document.querySelector('input[name=copilotName]').value;
-let fuelLevel = document.querySelector('input[name=fuelLevel]').value;
-let cargoMass = document.querySelector('input[name=cargoMass]').value;
-let errorTrip = 0;
+let pilotName = document.querySelector('input[name=pilotName]');
+let copilotName = document.querySelector('input[name=copilotName]');
+let fuelLevel = document.querySelector('input[name=fuelLevel]');
+let cargoMass = document.querySelector('input[name=cargoMass]');
+let form = document.getElementById('form');
+let numArr = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 // This block of code shows how to format the HTML once you fetch some planetary JSON!
 window.addEventListener('load', function() {
 	//when page loads
@@ -27,13 +28,30 @@ window.addEventListener('load', function() {
 		});
 	});
 	form.addEventListener('submit', function(event) {
-		console.log(pilotName);
-		console.log(copilotName);
-		console.log(fuelLevel);
-		console.log(cargoMass);
+		let errorTrip = 0;
 
-		event.preventDefault();
-		if (fuelLevel < 10000 || isNaN(fuelLevel)) {
+		// console.log(pilotName);
+		// console.log(copilotName);
+		// console.log(fuelLevel);
+		// console.log(cargoMass);
+		// console.log(cargoMass.value);
+		// console.log(fuelLevel.value);
+		// console.log(pilotName.value);
+		// console.log(copilotName.value);
+		//so the code gods didn't like me using .value when declaring the var.
+		// *thats because i assigned the var as the initial value of value*
+		for (i = 0; i < numArr.length; i++) {
+			if (pilotName.value.indexOf(numArr[i]) != -1) {
+				errorTrip++;
+				alert(` pilot name can't contain numbers numbers`);
+			}
+
+			if (copilotName.value.indexOf(numArr[i]) != -1) {
+				errorTrip++;
+				alert(`copilot name can't contain numbers numbers`);
+			}
+		}
+		if (fuelLevel.value < 10000 || isNaN(fuelLevel.value)) {
 			errorTrip++;
 			console.log('fuel');
 			console.log(fuelLevel.innerHTML);
@@ -42,7 +60,7 @@ window.addEventListener('load', function() {
 
 			document.getElementById('fuelStatus').innerHTML = 'Fuel level Low';
 		}
-		if (cargoMass > 10000 || isNaN(cargoMass)) {
+		if (cargoMass.value > 10000 || isNaN(cargoMass.value)) {
 			errorTrip++;
 			console.log('cargo');
 			document.getElementById('cargoStatus').innerHTML = 'Too heavy';
